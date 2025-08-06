@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 100%);
+    position: relative;
+    overflow-x: hidden;
+    font-family:'Inter', sans-serif;
+    color: #e0e6ff;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: clamp(2rem, 7vw, 4rem);
+    font-family: 'Poppins';
+    background: linear-gradient(135deg, #4d6eff 0%, #3e116b 25%, #f093fb 50%, #d82940 75%, #0a3a64 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.06em;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 1rem auto;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.img {
+    width: clamp(100px, 12vw, 140px);
+    height: clamp(100px, 12vw, 140px);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg, #1e293b, #334155);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(102, 126, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: #667eea;
+}
+
+.score-div {
+    display: flex;
+    justify-content: center;
+    gap: clamp(8rem, 25vw, 15rem);
+    margin-bottom: 1rem;
+}
+
+.you-score,
+.comp-score {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+    transition: all 0.4s ease;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgba(30, 41, 59, 0.3);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+    gap: clamp(8rem, 25vw, 15rem);
+    margin-bottom: 1rem;
+}
+
+.you,
+.comp {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 600;
+    font-family: 'Orbitron', monospace;
+    color: #a5b4fc;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 10px rgba(165, 180, 252, 0.3);
+}
+
+.msg-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.msg {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 600;
+    font-family: 'Orbitron', monospace;
+    color: #ffffff;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.8));
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    text-align: center;
+    letter-spacing: -0.02em;
+    backdrop-filter: blur(10px);
+}
+
+.re-con {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.restart {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Orbitron', monospace;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.01em;
+    box-shadow:
+        0 8px 25px rgba(102, 126, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.restart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.restart:hover::before {
+    left: 100%;
+}
+
+.restart:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #4c63d2, #5a4fb8);
+}
+
+.restart:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .choices {
+        gap: 2rem;
+    }
+
+    .players {
+        gap: 4rem;
+    }
+
+    .score-div {
+        gap: 4rem;
+    }
+
+    .re-con {
+        margin-bottom: 2rem;
+    }
+}
