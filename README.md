@@ -1,6 +1,6 @@
 # Rock Paper Scissors Game
 
-A fun and interactive Rock-Paper-Scissors game built using **HTML**, **CSS**, and **JavaScript**. Challenge the computer, test your luck, and enjoy a clean, responsive design with dynamic score tracking.
+A fun and interactive Rock-Paper-Scissors game built using **HTML**, **CSS**, and **JavaScript**. Challenge the computer, test your luck, and enjoy clean, responsive design with dynamic score tracking.
 
 ## Link of Rock-Paper-Scissors
 
