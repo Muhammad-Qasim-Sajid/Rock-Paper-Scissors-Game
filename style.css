@@ -11,6 +11,9 @@ body {
     overflow-x: hidden;
     font-family:'Inter', sans-serif;
     color: #e0e6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .heading {
